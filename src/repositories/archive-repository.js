@@ -29,7 +29,12 @@ function createArchiveRepository(archive) {
     return archive;
 }
 
+function updateArchiveRepository(id, archive) {
+ 
+}
+
 module.exports = {
     loadArchiveRepository,
-    createArchiveRepository
+    createArchiveRepository,
+    updateArchiveRepository
 }
