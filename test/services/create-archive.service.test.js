@@ -18,7 +18,7 @@ describe('Create Archive Service', ()=>{
     it('should create an archive', ()=>{
         const archive = createArchive(ARCHIVE_MOCK);
         const keys = Object.keys(archive);
-        expect(typeof archive.id).toBe(string);
+        expect(typeof archive.id).toEqual('string');
         expect(archive.name).toEqual(ARCHIVE_MOCK.name);
         expect(archive.content).toEqual(ARCHIVE_MOCK.content);
         expect(keys).toContain('createAt');

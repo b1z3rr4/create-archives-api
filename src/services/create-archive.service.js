@@ -1,4 +1,5 @@
 const { createArchiveRepository } = require('../repositories/archive-repository');
+const { idGenerator } = require('../utils/id-generator');
 
 function createArchive(archive) {
     if(!archive){
@@ -10,6 +11,18 @@ function createArchive(archive) {
     if(!archive.content){
         throw new Error('Archive content is required');
     }
+
+    const id = idGenerator(archive.name);
+    const createAt =  new Date();
+
+    const newArchive = {
+        id: id,
+        createAt: createAt,
+        ...archive
+    }
+
+    createArchiveRepository(newArchive);
+    return newArchive;
 }
 
 module.exports = { createArchive };
